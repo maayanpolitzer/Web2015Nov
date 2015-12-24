@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="cookies.js"></script>
+		<script>
+			var username = "maayan";
+			var password = "123";
+			
+			/*
+				var user = new Object();
+				user.name = "maayan";
+				user.password = "123";
+			//	var user2 = {name:"moshe", password:"123"};
+				var users = [];
+				users.push(user);
+			*/
+			
+			window.onload = function(){
+				var usernameCookie = getCookie("USERNAME");
+				var passwordCookie = getCookie("PASSWORD");
+				if(usernameCookie == username && passwordCookie == password){
+					window.location = "main.html";
+				}
+			};
+			
+			function submit(){
+				var inputUsername = document.getElementById("username");
+				var inputPassword = document.getElementById("password");
+				if(inputUsername.value == username && inputPassword.value == password){
+					var checkBox = document.getElementById("checkBox");
+					if(checkBox.checked){
+						setCookie("USERNAME", inputUsername.value, 365);
+						setCookie("PASSWORD", inputPassword.value, 365);
+					}
+					window.location = "main.html";
+				}else{
+					alert("NO");
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<header>
+			Username: <input id="username" type="text" placeholder="username"/>
+			Password: <input id="password" type="password" placeholder="password"/>
+			remember me! <input id="checkBox" type="checkBox" />
+			<button onclick="submit();">login</button>
+		</header>
+	</body>
+</html>

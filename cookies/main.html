@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>welcome</title>
+		<style>
+			button {
+				float: right;
+			}
+		</style>
+		<script type="text/javascript" src="cookies.js"></script>
+		<script>
+			window.onload = function(){
+				afterLoadingHtml();
+			};			
+		
+			function afterLoadingHtml(){
+				var username = getCookie("USERNAME");
+				if(username != null){
+					document.getElementsByTagName("h1")[0].innerHTML = "hello " + username;
+				}
+			}
+			
+			function logout(){
+				delCookie("USERNAME");
+				delCookie("PASSWORD");
+				window.location = "index.html";
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<button onclick="logout();">Logout</button>
+		<h1>hello guest...</h1>
+	</body>
+</html>
