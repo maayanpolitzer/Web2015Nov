@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>JavaScript</title>
+	<!--	<script type="text/javascript" src="script.js"></script>	-->
+	</head>
+	<body>
+		<h1 class="c">hello</h1>
+		<ul id="list">
+			<li>1</li>
+			<li>maayan</li>
+			<li>3</li>
+			<li>tree</li>
+			<li>5</li>
+		</ul>
+		<script>
+			var x = document.getElementById("list");
+			console.log(x.innerHTML);
+			var y = document.getElementsByTagName("li");
+			
+			for(var i = 0; i < y.length; i++){
+				console.log(y[i].innerHTML);
+			}
+		</script>
+	</body>
+</html>
