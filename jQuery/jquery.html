@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<script src="jquery-1.11.3.min.js"></script>	-->
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+	<body>
+		<p id="p">hello</p>
+		<a>google</a>
+		<div style="background-color:blue;color:white;width:100px; height:100px;">hello</div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<button>click me</button>
+		<script>
+		
+		/*
+			var p = $("p");
+			$("#p") == doucment.getElementById("p");
+			$("p") == docuemnt.getElementsByTagName("p");
+			$(".p")[0] == docuemnt.getElementsByClassName("p")[0];
+			*/
+			$("button").click(function(){
+				//$("#p").slideToggle(1000);
+				$("div").animate({
+					width: '+=150px',
+					height: '+=150px'
+				});
+			});
+			
+			$(document).keypress(function(e) {
+				console.log(e);
+			});
+			
+			//$("*") - get all elements from body.
+			//$("li:first")
+			//$("tr:even") - brings the even rows of a table.
+			// events:
+			//	mouse: click, dblclick
+			//	keyborad: keypress, keydown, keyup
+			//form: submit, change, focus, blur
+			// window/document: load, resize, scroll, unload
+			
+		</script>
+	</body>
+</html>

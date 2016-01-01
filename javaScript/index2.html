@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript intro</title>
+		<style>
+			.list {
+				background-color: green;
+			}
+			
+			.newList {
+				background-color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<ul class="list">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul id="secondList">
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+		<a id="link" href="http://www.google.com">Go to google</a>
+		<div id="div" onmouseover="changeColor(this, 'pink');" onmouseout="changeColor(this, 'yellow');" style="height:100px; width:100px; background-color:yellow;">
+			
+		</div>
+		<button id="btn" onclick="btnClick(this)">click me!!!</button>
+		
+		<script>
+			
+			function changeColor(div, color){
+				div.style.background = color;
+			}
+			
+		
+			var white = false;
+		
+			function btnClick(btn){
+				if(white){
+					btn.style.color = "black";
+				}else{
+					btn.style.color = "white";
+				}
+				white = !white;
+			}
+			/*
+		
+			var div = document.getElementById("div");
+			
+			var newP = document.createElement("p");
+			newP.innerHTML = "finally working!!!";
+			div.appendChild(newP);
+			*/
+			
+			/*
+			var secondList = document.getElementById("secondList");
+			var listItems = secondList.getElementsByTagName("li");
+			for(var i = 0; i < listItems.length; i++){
+				
+				if(listItems[i].innerHTML == "7"){
+					listItems[i].style.color = "pink";
+				}
+			}
+			
+			
+			var lists = document.getElementsByTagName("ul");
+			console.log(lists[0].getAttribute("class"));
+			lists[0].setAttribute("class", "newList");
+			
+			var link = document.getElementById("link");
+			link.innerHTML = "go to yahoo";
+			link.setAttribute("href", "http://www.yahoo.com");
+			*/
+		</script>
+	</body>
+</html>

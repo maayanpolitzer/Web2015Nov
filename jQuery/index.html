@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>basic paint website</title>
+	</head>
+	<body>
+		<canvas id="canvas">
+			Sorry... your browser is old!!!
+		</canvas>
+		<script>
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			var radius = 10;
+			var mouseBtnPressed = false;
+			context.lineWidth = 2 * radius;
+			var color = "FFF";
+			context.fillStyle = color;
+			context.strokeStyle = "#FF0000";
+			var drawPoint = function(e){
+				if(mouseBtnPressed){
+					context.lineTo(e.offsetX, e.offsetY);
+					context.stroke();
+					context.beginPath();
+					context.arc(e.offsetX, e.offsetY, radius, 0, Math.PI * 2);
+					context.fill();
+					context.beginPath();
+					context.moveTo(e.offsetX, e.offsetY);
+				}	
+			};
+			
+			function clicked(e){
+				mouseBtnPressed = true;
+				drawPoint(e);
+			}
+			
+			function release(){
+				mouseBtnPressed = false;
+				context.beginPath();
+			}
+			
+			canvas.addEventListener("mousemove", drawPoint);
+			canvas.addEventListener("mousedown", clicked);
+			canvas.addEventListener("mouseup", release);
+			
+			
+			/*
+			function drawLine(){
+				context.beginPath();
+				context.moveTo(50,50);
+				context.lineTo(100, 100);
+				context.closePath();
+				context.stroke();
+			}
+			
+			function drawRect(){
+				context.beginPath();
+				context.moveTo(200,200);
+				context.lineTo(300, 200);
+				context.lineTo(300, 300);
+				context.lineTo(200, 300);
+				context.closePath();
+				context.stroke();
+			//	context.fill();
+			}
+			
+			function drawTri(){
+				context.beginPath();
+				context.fillStyle = "#FF0000";
+				context.moveTo(400,400);
+				context.lineTo(400, 600);
+				context.lineTo(600, 400);
+				context.closePath();
+				context.stroke();
+				context.fill();
+			}
+			
+			drawLine();
+			drawRect();
+			drawTri();
+			*/
+			
+		</script>
+	</body>
+</html>
